@@ -5,7 +5,7 @@
   "main": "start.js",
   "type": "module",
   "scripts": {
-    "start": "pm2 start start.js --deep-monitoring --attach --name prabath-md-next",
+    "start": "pm2 start start.js --name prabath-md-next",
     "stop": "pm2 stop prabath-md-next",
     "restart": "pm2 restart prabath-md-next"
   },
@@ -16,7 +16,7 @@
     "@hapi/boom": "^9.1.3",
     "@sl-code-lords/image-library": "1.0.0",
     "@vitalets/google-translate-api": "9.2.0",
-    "@whiskeysockets/baileys": "github:AmilaPrabathKumara/Baileys-Latest",
+    "@whiskeysockets/baileys": "latest",
     "api-dylux": "latest",
     "axios": "^1.7.9",
     "btch-downloader": "2.3.1-alpha",
@@ -50,6 +50,17 @@
     "sqlite3": "5.1.7",
     "unzipper": "0.12.2",
     "wa-sticker-formatter": "^4.3.2",
-    "yt-search":"latest"
+    "yt-search": "latest"
+  },
+  "overrides": {
+    "simple-xml-to-json": {
+      "type": "commonjs",
+      "exports": {
+        ".": {
+          "import": "./lib/simpleXmlToJson.js",
+          "require": "./lib/simpleXmlToJson.js"
+        }
+      }
+    }
   }
 }
